@@ -1,0 +1,26 @@
+This is an ASCII to "Fake DNA" translator. It's basic text expansion on a specific map. I used perl so as not to depend on too many small unix programs piped together. Also, it's more obvious how to edit the map this way.
+
+The input text should certainly be ASCII, not UTF8. You should down-convert to UTF8 before using this app. It does, however, show you text which is not translated in the output. If "a" is not translated, it will output "__a__". You can search for __ for untranslated characters. My experience so far is that Unicode will pass through this way for you to cut out.
+
+The example text is "Darwin: On the Origin of Species 6th Edition", as it has been done before this way, so it is a good test. I also took some random blog posts from others and tested those successfully.
+
+Input is "input.txt" file. It's hard coded inside. Change it if you'd like.
+I was using macports-perl, so my shebang is #!/opt/local/bin/perl You probably want to change it
+
+Example:
+$ cat input.txt
+I will here give a brief sketch of the progress of opinion on the Origin
+of Species. Until recently the great majority of naturalists believed
+that species were immutable productions, and had been separately
+created. This view has been ably maintained by many authors. Some few
+naturalists, on the other hand, have believed that species undergo
+modification, and that the existing forms of life are the descendants
+by true generation of pre existing forms. Passing over allusions to
+the subject in the classical writers (Aristotle, in his "Physicae
+Auscultationes" (lib.2, cap.8, s.2), after remarking that rain does no
+...
+$ ./ascii2gen.pl
+TTCTCTTACTTCCCGCCGTCTTTAAAGATTAAGTCTGGGTTCTAGAAGTCTAAATCTAATATTTTCAAGTTGTCTATGCCAAAGTTTCCCTTATCTGGCTTGTCTTTTTTAAAGTCTATAATTGGCGGGATTAAGATGATGTCTGGCTTGTCTGGCATATTCGGATTCGGCGGATCTGGCGGATCTTTTTTAAAGTCTGGCATTTTCGGGTTCGGATCGGGCTTGTCTATGATAAAGCCCTTCAAGATGTCATCTTATGGATTTTTCCCGTCTATTAAGCCCAAGGGATTTCCGCTCTCTTTTTTAAAGTCTGGGATTAAGAAATTTTCTGGTAAACCTGGCATTTTCTTTCTCTCTGGCTTGTCTGGAAAATTTTATATTAAACCGTTCATGTTTATGTCTAATAAGCCGTTCAAGTAGAAGAACTCGTTTTTAAAATTTTCTATGATAAAGCCCTTCAAGATGTCTTACAAGATTAAGTCTTTCGGTGGTTATTTTAAAAATCCGAAGTCTATAATTGGCAACTATCCCTTTTTCGGCG
+...
+
+
