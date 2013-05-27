@@ -1,11 +1,11 @@
 This is an ASCII to "Fake DNA" translator. It's basic text expansion on a specific map. I used perl so as not to depend on too many small unix programs piped together. Also, it's more obvious how to edit the map this way.
 
-The input text should certainly be ASCII, not UTF8. You should down-convert to UTF8 before using this app. It does, however, show you text which is not translated in the output. If "a" is not translated, it will output "__a__". You can search for __ for untranslated characters. My experience so far is that Unicode will pass through this way for you to cut out.
+The input text should certainly be ASCII, not UTF8. You should down-convert to ASCII before using this app. It does, however, show you text which could not be translated in the output. If "a" is not translated, it will output "__a__". You can search for __ for untranslated characters. My experience so far is that Unicode will pass through this way for you to cut out.
 
-The example text is "Darwin: On the Origin of Species 6th Edition", as it has been done before this way, so it is a good test. I also took some random blog posts from others and tested those successfully.
+The example text is "Darwin: On the Origin of Species 6th Edition". It was previously translated this way, so it is a good test. I also took some random blog posts from others and tested those successfully (but didn't include them here).
 
 Input is "input.txt" file. It's hard coded inside. Change it if you'd like.
-I was using macports-perl, so my shebang is #!/opt/local/bin/perl You probably want to change it
+I was using macports-perl, so my shebang is #!/opt/local/bin/perl You probably want to change it to /usr/local/perl, or whatever works.
 
 Example:
 $ cat input.txt

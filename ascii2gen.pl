@@ -78,10 +78,11 @@ while(<MYFILE>) {
     @chars = split //;
     #loop char by char
     for $char(@chars) {
+	# If it's in the map, print the map translation
 	if (defined($gen{lc($char)})) {
 		print $gen{lc($char)}; 
 	} else {
-		# print characters we couldnt translate so we notice them
+		# If not in the map, then print character with marks so we notice
 		print "__${char}__";
 	}
     }
